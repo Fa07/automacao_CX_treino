@@ -9,7 +9,14 @@ end
 
 Entao("irei preencher o formulário") do
   binding.pry
-  fill_in('id="nome-3547-1"', witch => 'Fernando Coutinho')
-  fill_in('id="email-3547-1"', witch => 'cout.fernando.a@gmail.com')
-  fill_in('id="telefone-3547-1"', witch => '3244-2766')
+  #page.find('[name="nome"]').click
+  #fill_in('id="nome-3547-1"', witch => 'Fernando Coutinho')
+  page.find('[id="nome-3547-1"]').set('Fernando Coutinho')
+  #fill_in('id="email-3547-1"', witch => 'cout.fernando.a@gmail.com')
+  page.find('[id="email-3547-1"]').set('cout.fernando.a@gmail.com')
+  #fill_in('id="telefone-3547-1"', witch => '3244-2766')
+  page.find('[id="telefone-3547-1"]').set('1133224897')
+  page.find('[class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control"]').set('HAGADAGA')
+  page.find('[class="wpcf7-form-control wpcf7-submit btn btn-lg btn-primary btn-submit"]').click
+  assert_text("Sua mensagem foi enviada com sucesso!")
 end
