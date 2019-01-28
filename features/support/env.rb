@@ -2,12 +2,10 @@
 require 'cucumber'
 require 'selenium/webdriver'
 require 'capybara'
+require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'pry'
-#require 'page-object'
-#require 'data_magic'
-
-#World(PageObject::PageFactory)
+require 'site_prism'
 
 #CONFIGURANDO O DRIVER CAPYBARA
 Capybara.register_driver :selenium do |app|
